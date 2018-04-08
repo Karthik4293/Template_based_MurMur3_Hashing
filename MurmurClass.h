@@ -89,9 +89,8 @@ class MurmurClass {
     unpackArgs(std::tuple<Tp...>& t, Ti prevItem) {
         auto currentItem = std::get<I>(t);
         auto prevBytesArraySize = bytesArraySize;
-        std::cout << "I: " << I << std::endl;
         std::cout << "Current Item: " << prevItem << std::endl;
-        std::cout << "Size of Current Item: " << sizeof(prevItem) << std::endl;
+        std::cout << "Size of Current Item: " << sizeof(prevItem) << "\n" << std::endl;
         bytesArraySize += sizeof(prevItem);
         bytesArray.resize(bytesArraySize);
         std::memcpy(bytesArray.data() + prevBytesArraySize, &prevItem, sizeof(prevItem)); // copy to array byte wise
@@ -106,9 +105,8 @@ class MurmurClass {
     unpackArgs(std::tuple<Tp...>& t, Ti prevItem) {
         auto currentItem = std::get<I>(t);
         auto prevBytesArraySize = bytesArraySize;
-        std::cout << "I: " << I << std::endl;
         std::cout << "Current Item: " << prevItem << std::endl;
-        std::cout << "Size of Current Item:" << prevItem.length() + 1 << std::endl;
+        std::cout << "Size of Current Item:" << prevItem.length() + 1 << "\n" << std::endl;
         bytesArraySize += prevItem.length() + 1; // +1 to include the null character
         bytesArray.resize(bytesArraySize);
         // strcpy(bytesArray.data() + prevBytesArraySize, prevItem.c_str());  // copy to array each character byte wise
@@ -124,9 +122,8 @@ class MurmurClass {
     unpackArgs(std::tuple<Tp...>& t, Ti prevItem) {
         auto currentItem = std::get<I>(t);
         auto prevBytesArraySize = bytesArraySize;
-        std::cout << "I: " << I << std::endl;
         std::cout << "Current Item: " << prevItem << std::endl;
-        std::cout << "Size of Current Item: " << strlen(prevItem) + 1 << std::endl;
+        std::cout << "Size of Current Item: " << strlen(prevItem) + 1 <<  "\n" << std::endl;
         bytesArraySize += strlen(prevItem) + 1; // +1 to include the null character
         bytesArray.resize(bytesArraySize);
         std::memcpy(bytesArray.data() + prevBytesArraySize, prevItem, strlen(prevItem) + 1); // copy to array byte wise
@@ -140,9 +137,8 @@ class MurmurClass {
                                        && !(is_c_str<Ti>::value), void>::type
     unpackArgs(std::tuple<Tp...>& t, Ti lastItem) {
         auto prevBytesArraySize = bytesArraySize;
-        std::cout << "I: " << I << std::endl;
         std::cout << "Last Item: " << lastItem << std::endl;
-        std::cout << "Last Item Size: " << sizeof(lastItem) << std::endl;
+        std::cout << "Last Item Size: " << sizeof(lastItem) << "\n" << std::endl;
         bytesArraySize += sizeof(lastItem);
         bytesArray.resize(bytesArraySize);
         std::memcpy(bytesArray.data() + prevBytesArraySize, &lastItem, sizeof(lastItem)); // copy to array byte wise
@@ -159,9 +155,8 @@ class MurmurClass {
                                        && !(is_c_str<Ti>::value), void>::type
     unpackArgs(std::tuple<Tp...>& t, Ti lastItem) {
         auto prevBytesArraySize = bytesArraySize;
-        std::cout << "I: " << I << std::endl;
         std::cout << "Last Item: " << lastItem << std::endl;
-        std::cout << "Last Item Size: " << lastItem.length() + 1 << std::endl;
+        std::cout << "Last Item Size: " << lastItem.length() + 1 << "\n" << std::endl;
         bytesArraySize += lastItem.length() + 1; // +1 to include the null character
         bytesArray.resize(bytesArraySize);
         std::memcpy(bytesArray.data() + prevBytesArraySize, lastItem.c_str(), strlen(lastItem.c_str()) + 1); // copy to array byte wise
@@ -178,9 +173,8 @@ class MurmurClass {
                                        && (is_c_str<Ti>::value), void>::type
     unpackArgs(std::tuple<Tp...>& t, Ti lastItem) {
         auto prevBytesArraySize = bytesArraySize;
-        std::cout << "I: " << I << std::endl;
         std::cout << "Last Item: " << lastItem << std::endl;
-        std::cout << "Last Item size: " << strlen(lastItem) + 1 << std::endl;
+        std::cout << "Last Item size: " << strlen(lastItem) + 1 << "\n" << std::endl;
         bytesArraySize += strlen(lastItem) + 1; // +1 to include the null character
         bytesArray.resize(bytesArraySize);
         std::memcpy(bytesArray.data() + prevBytesArraySize, lastItem, strlen(lastItem) + 1); // copy to array byte wise

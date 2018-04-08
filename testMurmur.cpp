@@ -6,7 +6,8 @@
 #include <limits>
 
 int main() {
-	std::cout << "### test 1 - int, char, long long, std::string, float, const char * ###" << std::endl;
+	std::cout << "### Test 1 ###" << "\n"
+	          << "Intput types: int, char, long long, std::string, float, const char * ###" << std::endl;
 	int inA = 1, inB = 2, inC = 3;
 	char inD = 's';
 	long long int inE = std::numeric_limits<long long int>::max();
@@ -21,10 +22,11 @@ int main() {
 			  << inD << " " << inE << " " << inF << " " << inG << " " << inH << std::endl;
 	std::cout << std::endl;
 	std::cout << "Murmurhash is : " << std::endl;
-	std::cout << "\t" << hash1[0] << hash1[1] << std::endl;
+	std::cout << "\t" << hash1[0] << hash1[1] << "\n" << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "### test 2 - only const char * ###" << std::endl;
+	std::cout << "### Test 2 ###" << "\n"
+	          << "Input types: - only const char * ###" << std::endl;
 	const char *inA2 = "string generic input";
 	uint64_t *hash2 = new uint64_t[2];
 	MurmurClass<uint64_t*, const char *> murmurObj2; // initiate object
@@ -33,7 +35,7 @@ int main() {
 	std::cout << "\t" << inA2 << std::endl;
 	std::cout << std::endl;
 	std::cout << "Murmurhash is : " << std::endl;
-	std::cout << "\t" << hash2[0] << hash2[1] << std::endl;
+	std::cout << "\t" << hash2[0] << hash2[1] << "\n" << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "### test 3 - only std::string ###" << std::endl;
@@ -45,7 +47,7 @@ int main() {
 	std::cout << "\t" << inA3 << std::endl;
 	std::cout << std::endl;
 	std::cout << "Murmurhash is : " << std::endl;
-	std::cout << "\t" << hash3[0] << hash3[1] << std::endl;
+	std::cout << "\t" << hash3[0] << hash3[1] << "\n"  << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "### test 4 - only const char * and std::string ###" << std::endl;
@@ -62,7 +64,7 @@ int main() {
 	std::cout << std::endl;
 
 	std::cout << "### test 5 - empty key case ###" << std::endl;
-	std::cout << "When Key is empty : " << std::endl;
+	std::cout << "When Key is empty : " << "\n" << std::endl;
 	MurmurClass<uint64_t*> murmurEmptyObj;
 	murmurEmptyObj.apply(hash1);
 	delete [] hash1;
