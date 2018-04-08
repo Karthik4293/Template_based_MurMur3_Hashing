@@ -1,4 +1,4 @@
-# Bigstream-Murmur #
+#MurMur3 Hashing #
 
 ## Usage ##
 	$ make clean
