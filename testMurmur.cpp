@@ -65,7 +65,7 @@ int main() {
 	std::cout <<  hash4[0] << hash4[1] << std::endl;
 	std::cout << "\n" << std::endl;
 
-	std::cout << "\n" << "### Test 5 ###"
+	std::cout << "\n" << "### Test 5 ###" << "\n"
 	          << "Input types: empty key case" << std::endl;
 	MurmurClass<uint64_t*> murmurEmptyObj;
 	murmurEmptyObj.apply(hash1);
