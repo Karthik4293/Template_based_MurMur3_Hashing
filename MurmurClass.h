@@ -46,7 +46,7 @@ class MurmurClass {
     MurmurClass() : bytesArraySize(0) {}
     void apply(HashT hash, Arguments... args) {
         tuple_ = tupleLambda(args...); // calling lambda function to construct keys tuple
-        std::cout << "Total number of arguments: " << numParam << std::endl;
+        std::cout << "\n" << "Total number of arguments: " << numParam << "\n" << std::endl;
         unpackArgs(tuple_); // unpack tuple
         if (!bytesArraySize) { // if no key provided
             std::cerr << "No Keys to hash!" << std::endl;

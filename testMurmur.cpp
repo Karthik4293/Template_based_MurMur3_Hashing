@@ -6,8 +6,8 @@
 #include <limits>
 
 int main() {
-	std::cout << "### Test 1 ###" << "\n"
-	          << "Intput types: int, char, long long, std::string, float, const char * ###" << std::endl;
+	std::cout << "\n" << "### Test 1 ###" << "\n"
+	          << "Intput types: int, char, long long, std::string, float, const char *" << std::endl;
 	int inA = 1, inB = 2, inC = 3;
 	char inD = 's';
 	long long int inE = std::numeric_limits<long long int>::max();
@@ -21,12 +21,12 @@ int main() {
 	std::cout << "\t" << inA << " " << inB << " " << inC << " "
 			  << inD << " " << inE << " " << inF << " " << inG << " " << inH << std::endl;
 	std::cout << std::endl;
-	std::cout << "Murmurhash is : " << std::endl;
-	std::cout << "\t" << hash1[0] << hash1[1] << "\n" << std::endl;
-	std::cout << std::endl;
+	std::cout << "Murmurhash key: " << std::endl;
+	std::cout << "\t" << hash1[0] << hash1[1]  << std::endl;
+	std::cout << "\n" << std::endl;
 
-	std::cout << "### Test 2 ###" << "\n"
-	          << "Input types: - only const char * ###" << std::endl;
+	std::cout << "\n" << "### Test 2 ###" << "\n"
+	          << "Input types: only const char *" << std::endl;
 	const char *inA2 = "string generic input";
 	uint64_t *hash2 = new uint64_t[2];
 	MurmurClass<uint64_t*, const char *> murmurObj2; // initiate object
@@ -34,11 +34,12 @@ int main() {
 	std::cout << "Keys are : " << std::endl;
 	std::cout << "\t" << inA2 << std::endl;
 	std::cout << std::endl;
-	std::cout << "Murmurhash is : " << std::endl;
-	std::cout << "\t" << hash2[0] << hash2[1] << "\n" << std::endl;
-	std::cout << std::endl;
+	std::cout << "Murmurhash key: " << std::endl;
+	std::cout << "\t" << hash2[0] << hash2[1] << std::endl;
+	std::cout << "\n" << std::endl;
 
-	std::cout << "### test 3 - only std::string ###" << std::endl;
+	std::cout << "\n" << "### Test 3 ###" << "\n"
+	          <<  "Input types: only std::string" << std::endl;
 	std::string inA3 = "string generic input";
 	uint64_t *hash3 = new uint64_t[2];
 	MurmurClass<uint64_t*, std::string> murmurObj3; // initiate object
@@ -46,11 +47,12 @@ int main() {
 	std::cout << "Keys are : " << std::endl;
 	std::cout << "\t" << inA3 << std::endl;
 	std::cout << std::endl;
-	std::cout << "Murmurhash is : " << std::endl;
-	std::cout << "\t" << hash3[0] << hash3[1] << "\n"  << std::endl;
-	std::cout << std::endl;
+	std::cout << "Murmurhash key: " << std::endl;
+	std::cout << "\t" << hash3[0] << hash3[1] << std::endl;
+	std::cout << "\n" << std::endl;
 
-	std::cout << "### test 4 - only const char * and std::string ###" << std::endl;
+	std::cout << "\n" << "### Test 4 ###"
+	          << "Input types: only const char * and std::string" << std::endl;
 	std::string inA4 = "string input 2";
 	const char *inB4 = "const char * input 2";
 	uint64_t *hash4 = new uint64_t[2];
@@ -59,12 +61,12 @@ int main() {
 	std::cout << "Keys are : " << std::endl;
 	std::cout << "\t" << inA4 << " " << inB4 << std::endl;
 	std::cout << std::endl;
-	std::cout << "Murmurhash is : " << std::endl;
+	std::cout << "Murmurhash key: " << std::endl;
 	std::cout << "\t" << hash4[0] << hash4[1] << std::endl;
-	std::cout << std::endl;
+	std::cout << "\n" << std::endl;
 
-	std::cout << "### test 5 - empty key case ###" << std::endl;
-	std::cout << "When Key is empty : " << "\n" << std::endl;
+	std::cout << "\n" << "### Test 5 ###"
+	          << "Input types: empty key case" << std::endl;
 	MurmurClass<uint64_t*> murmurEmptyObj;
 	murmurEmptyObj.apply(hash1);
 	delete [] hash1;
