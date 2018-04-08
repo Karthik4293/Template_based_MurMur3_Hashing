@@ -1,4 +1,4 @@
-#MurMur3 Hashing #
+# MurMur3 Hashing #
 
 ## Usage ##
 	$ make clean
